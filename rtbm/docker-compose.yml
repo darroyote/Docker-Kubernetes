@@ -1,0 +1,38 @@
+version: "3"
+ 
+services:
+  mysql:
+    image: mysql
+    # Exponemos las variables
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=True
+      - MYSQL_DATABASE=db
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_root_host=%
+    volumes:
+      # Persistencia de datos
+      - ./db-data:/var/lib/mysql
+    expose:
+      - 3306
+    ports:
+      - 3306:3306
+   
+  app_myrtb:
+    build: .
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ALLOW_EMPTY_PASSWORD=True
+      - MYSQL_DATABASE=db
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_root_host=%
+      - DB_HOST=mysql
+    volumes:
+      # Montamos nuestra web desde fuera en el directorio web del contenedor
+      - ./db-data:/myrtb/
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    links: 
+      - mysql
