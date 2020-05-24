@@ -38,7 +38,7 @@ La estructura que puedes encontrar en el proyecto se compone de la siguiente car
   - Accedemos a: http://localhost:8080 Si estamos en una ec2, veremos la ip pública de la máquina      
 
 
-## PENDIENTE
+## PENDIENTE -- TENGO FICHEROS CREADOS, PERO SIN FUNCIONAR (manifiesto Kubernetes y chart de helm a colgar mas adelante)
   ##### KUBERNETES 
   Versión  
   ```
