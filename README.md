@@ -29,7 +29,7 @@ La estructura que puedes encontrar en el proyecto se compone de la siguiente car
 
   - Crear contenedor mysql: (la nombramos mysql)
     ```
-    docker run -d --name mysql darroyote/mysql_for_rtb:v1
+    sudo docker run --name mysql darroyote/mysql_for_rtb:v1
     ```
   - Crear contenedor app: (lincamos con la BBDD)
     ```
