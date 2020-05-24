@@ -27,15 +27,15 @@ La estructura que puedes encontrar en el proyecto se compone de la siguiente car
 
 ## EJECUCIÓN
 
-  - Crear contenedor mysql: (la nombramos mysql)
+  - Crear contenedor mysql: (la nombramos mysql). Funcionaria tambien con la imagen mysql
     ```
-    sudo docker run --name mysql darroyote/mysql_for_rtb:v1
+    sudo docker run --name mysql -v db_data:/var/lib/mysql darroyote/mysql_for_rtb:v1
     ```
   - Crear contenedor app: (lincamos con la BBDD)
     ```
     docker run -p 8080:8080 --link mysql:mysql darroyote/myrtb:v1
     ```
-  - Accedemos a: http://localhost:8080 Si estamos en una ec2, veremos la ip pública de la máquina      
+  - Accedemos a: http://localhost:8080 Si estamos en una ec2, daremos la ip pública de la máquina:8080.      
 
 
 ## PENDIENTE -- TENGO FICHEROS CREADOS, PERO SIN FUNCIONAR (manifiesto Kubernetes y chart de helm a colgar mas adelante)
